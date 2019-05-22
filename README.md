@@ -1,2 +1,3 @@
-# Solution_of_Hacking_book
-A comprehensive solution and source code of "HACKING: The art of exploitation (2nd edition)"
+# 🌏 Solution of Hacking book
+
+The objective of this repository is to share ethical hacking knowledge in this book. [[book]](https://www.amazon.com/Hacking-Art-Exploitation-Jon-Erickson/dp/1593271441)
