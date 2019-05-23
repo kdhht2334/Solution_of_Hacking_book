@@ -73,10 +73,66 @@ gdb -q ./a.out
 #    0x0000000000400551 <+43>:	retq
 
 # We can check register information like below:
-# (gdb) info register rbp
+# (gdb) break main
+# (gdb) run
+# (gdb) info registers
+# rax            0x400526	4195622
+# rbx            0x0	0
+# rcx            0x0	0
+# rdx            0x7fffffffe3c8	140737488348104
+# rsi            0x7fffffffe3b8	140737488348088
+# rdi            0x1	1
 # rbp            0x7fffffffe2d0	0x7fffffffe2d0
+# rsp            0x7fffffffe2c0	0x7fffffffe2c0
+# r8             0x4005d0	4195792
+# r9             0x7ffff7de7ab0	140737351940784
+# r10            0x846	2118
+# r11            0x7ffff7a2d740	140737348032320
+# r12            0x400430	4195376
+# r13            0x7fffffffe3b0	140737488348080
+# r14            0x0	0
+# r15            0x0	0
+# rip            0x40052e	0x40052e <main+8>
+# eflags         0x206	[ PF IF ]
+# cs             0x33	51
+# ---Type <return> to continue, or q <return> to quit---
+# ss             0x2b	43
+# ds             0x0	0
+# es             0x0	0
+# fs             0x0	0
+# gs             0x0	0
 
-# (gdb) info register eax
-# eax            0x400526	4195622
+# To examine memory, GDB debugger provides command `x`, which is short for examine
+
+# o: Display in octal.
+# x: Display in hexadecimal.
+# u: Display in unsigned, standard base-10 decimal.
+# t: Display in binary.
+
+# (gdb) x/o 0x7fffffffe2d0
+# 0x7fffffffe2d0:	020002540
+# (gdb) x/x 0x7fffffffe2d0
+# 0x7fffffffe2d0:	0x00400560
+# (gdb) x/u 0x7fffffffe2d0
+# 0x7fffffffe2d0:	4195680
+# (gdb) x/t 0x7fffffffe2d0
+# 0x7fffffffe2d0:	00000000010000000000010101100000
 
 
+# (gdb) print $rbp
+# $4 = (void *) 0x7fffffffe2d0
+# (gdb) x/x $4
+# 0x7fffffffe2d0:	0x60
+# (gdb) x/xw $rbp
+# 0x7fffffffe2d0:	0x00400560
+# (gdb) x/dw $rbp
+# 0x7fffffffe2d0:	4195680
+# (gdb) x/x 4195680
+# 0x400560 <__libc_csu_init>:	0x56415741
+
+# To move next line
+# (gdb) nexti
+# (gdb) nexti
+# 0x0000000000400549	6	  for (i=0; i<10; i++)
+# (gdb) nexti
+# 8	    puts("Hello World!\n");
