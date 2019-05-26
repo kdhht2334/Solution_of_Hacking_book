@@ -77,3 +77,4 @@ gdb -q ./char_array2
 # Continuing.
 # Hello, world!
 # [Inferior 1 (process 3389) exited normally]
+#
