@@ -90,3 +90,12 @@ gdb -q ./a.out
 # instead of the address itself.
 # (gdb) print *int_ptr
 # $5 = 5
+
+gcc addressof2.c
+./a.out
+# int_ptr = ox136407204348x
+# &int_ptr = ox136407204408x
+# *int_ptr = ox58x
+
+# int_var is located at ox136407204348x and contains 5
+# int_ptr is located at ox136407204408x, contains ox136407204348x, and points to 5
