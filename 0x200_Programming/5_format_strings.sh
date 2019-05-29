@@ -24,3 +24,16 @@ gcc -o fmt_strings fmt_strings.c
 # [field width on B] 3: '31337', 10: '     31337', '00031337'
 # [string] sample  Address e5dfb8b0
 # variable A is at address: e5dfb8a8
+
+# Format strings are used by an entire family of standard I/O functions,
+# including `scanf()`
+
+# The difference btw. `printf()` and `scanf()` is that `scanf()` expects
+# all of its arguments to be pointers, so the arguments must actually be
+# variable addresses - not the variables themselves.
+
+gcc -o input input.c
+./input
+# Repeat how many times?2
+#   0 - Hello world!
+#   1 - Hello world!
