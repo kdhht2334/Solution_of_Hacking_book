@@ -35,6 +35,6 @@ gcc -o scope2 scope2.c
 # In contrast, local variables for each function are each stored in their own 
 # places in memory.
 
-# Let's chec memory addresses of these variables :)
+# Let's check memory addresses of these variables :)
 gcc -o scope3 scope3.c
 ./scope3.out
