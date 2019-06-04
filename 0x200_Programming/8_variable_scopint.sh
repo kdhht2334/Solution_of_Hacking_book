@@ -122,4 +122,49 @@ gdb -q ./a.out
 # One different feature of static variables is they are only initialized once.
 
 gcc -o static static.c
-./static.out
+./static
+# [in main] static_var = 1337
+# 	[in function] var = 5
+# 	[in function] static_var = 5
+# [in main] static_var = 1337
+# 	[in function] var = 5
+# 	[in function] static_var = 6
+# [in main] static_var = 1337
+# 	[in function] var = 5
+# 	[in function] static_var = 7
+# [in main] static_var = 1337
+# 	[in function] var = 5
+# 	[in function] static_var = 8
+# [in main] static_var = 1337
+# 	[in function] var = 5
+# 	[in function] static_var = 9
+
+# The `static_var` retains it's value btw. subsequent calls
+# to `function()`.
+# This is because static variables retain their values, 
+# but also because they are only initialized once.
+
+# And printing the addresses of these variables will provide greater
+# viability into what's really going on.
+
+gcc -o static2.c
+./static2
+# [in main] static_var @ 0x601044 = 1337
+# 	[in function] var @ 0x7fff5d526674 = 5
+# 	[in function] static_var @ 0x601040 = 5
+# [in main] static_var @ 0x601044 = 1337
+# 	[in function] var @ 0x7fff5d526674 = 5
+# 	[in function] static_var @ 0x601040 = 6
+# [in main] static_var @ 0x601044 = 1337
+# 	[in function] var @ 0x7fff5d526674 = 5
+# 	[in function] static_var @ 0x601040 = 7
+# [in main] static_var @ 0x601044 = 1337
+# 	[in function] var @ 0x7fff5d526674 = 5
+# 	[in function] static_var @ 0x601040 = 8
+# [in main] static_var @ 0x601044 = 1337
+# 	[in function] var @ 0x7fff5d526674 = 5
+# 	[in function] static_var @ 0x601040 = 9
+
+# With the addresses of the variables displayed, it is apparent
+# that the `static_var` in `main()` is different than the one
+# found in `function()`.
