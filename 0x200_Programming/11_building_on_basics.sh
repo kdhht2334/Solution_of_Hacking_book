@@ -7,3 +7,20 @@
 # (Something blablabla...)
 gcc -o simplenote simmplenote.c
 ./simplenote
+# Usage: ./simplenote <data to add to /tmp/notes>
+
+./simplenote "this is a test note"
+# [DEBUG] buffer   @ 0x7fd26dc02a90: 'this is a test note'
+# [DEBUG] datafile @ 0x7fd26dc00620: '/tmp/notes'
+# [DEBUG] file descriptor is 3
+# Note has been saved.
+
+./simplenote "great, it works"
+# [DEBUG] buffer   @ 0x7f9826402a90: 'great, it works'
+# [DEBUG] datafile @ 0x7f9826400620: '/tmp/notes'
+# [DEBUG] file descriptor is 3
+# Note has been saved.
+
+cat /tmp/notes
+# this is a test note
+# great, it works
