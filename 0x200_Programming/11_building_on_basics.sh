@@ -24,3 +24,18 @@ gcc -o simplenote simmplenote.c
 cat /tmp/notes
 # this is a test note
 # great, it works
+
+gcc -o bitwise bitwise.c
+./bitwise
+
+# bitwise OR operator   |
+# 0 | 0 = 0
+# 0 | 1 = 1
+# 1 | 0 = 1
+# 1 | 1 = 1
+
+# bitwise AND operator   &
+# 0 & 0 = 0
+# 0 & 1 = 0
+# 1 & 0 = 0
+# 1 & 1 = 1
