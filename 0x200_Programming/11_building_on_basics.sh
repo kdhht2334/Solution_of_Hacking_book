@@ -52,3 +52,6 @@ gcc -o fcntl_flags fcntl_flags.c
 # O_CREAT				: 512	: 00000000 00000000 00000010 00000000
 # 
 # O_WRONLY|O_APPEND|O_CREAT	: 521	: 00000000 00000000 00000010 00001001
+
+# Using bit flags in combination with bitwise logic is and efficient 
+# and commonly used technique.
