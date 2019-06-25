@@ -91,3 +91,22 @@ sudo hexdump -C /var/notes
 # 00000010  65 73 74 20 6f 66 20 6d  75 6c 74 69 2d 75 73 65  |est of multi-use|
 # 00000020  72 20 6e 6f 74 65 73 0a                           |r notes.|
 # 00000028
+
+gcc -o notesearch notesearch.c
+sudo chown root:goup ./notesearch
+sudo chmod u+s ./notesearch
+./notesearch
+# [DEBUG] found a 35 byte note for user id 501
+# -------[ end of note data ]-------
+
+# What if a different user uses the notetaker and notesearch programs?
+sudo su daehakim
+./notetaker "This is a note for daehakim"
+# [debug] buffer   @ 0x7fcfe24028f0: 'This is a note for daehakim'
+# [debug] datafile @ 0x7fcfe2400620: '/var/notes'
+# [DEBUG] file descriptor is 3
+# Note has been saved.
+
+./notesearch
+# [DEBUG] found a 35 byte note for user id 501
+# -------[ end of note data ]-------
