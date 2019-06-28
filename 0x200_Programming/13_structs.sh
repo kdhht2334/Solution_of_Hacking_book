@@ -29,3 +29,16 @@ gcc -o time_example time_example.c
 ./time_example
 # time() - seconds since epoch: 1561645976
 # Current time is: 23:32:56
+
+gcc -o time_example2 time_example2.c
+./time_example2
+# time() - seconds since epoch: 1561731878
+# Current time is: 23:24:38
+# bytes of struct located at 0xe67b3578
+# 26 00 00 00 18 00 00 00 17 00 00 00 1c 00 00 00
+# 05 00 00 00 77 00 00 00 05 00 00 00 b2 00 00 00
+# 00 00 00 00 00 00 00 00 90 7e 00 00 00 00 00 00
+# 4c 62 80 41 c0 7f 00 00
+# int_ptr @ 0xe67b3578: 38
+# int_ptr @ 0xe67b357c: 24
+# int_ptr @ 0xe67b3580: 23
