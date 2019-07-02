@@ -42,5 +42,3 @@ gcc -o time_example2 time_example2.c
 # int_ptr @ 0xe67b3578: 38
 # int_ptr @ 0xe67b357c: 24
 # int_ptr @ 0xe67b3580: 23
-
-ii
