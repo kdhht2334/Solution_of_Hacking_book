@@ -6,7 +6,7 @@
 # Usually, pointers are used for variables. However, they can also be 
 # used for functions.
 
-# Here is example (100 page).
+# Here is an example (100 page).
 gcc -o funcptr_example funcptr_example.c
 ./funcptr_example
 # function_ptr is 0x004a1e50
@@ -25,7 +25,7 @@ gcc -o funcptr_example funcptr_example.c
 # The pseudo-random number generator functions fill this need by generating
 # a stream of numbers that is `pseudo-random`.
 
-# Here is example (101 page).
+# Here is an example (101 page).
 gcc -o rand_example rand_example.c
 ./rand_example
 # RAND_MAX is 2147483647
@@ -48,3 +48,18 @@ gcc -o rand_example rand_example.c
 # 6
 # 18
 
+
+# 0x287 A Game of Chance
+
+# The final program in this section is a set of games of chance that use many of
+# the concepts we've discussed.
+
+# The program uses pseudo-random number generator functions to provide the element
+# of chance. It has three different game functions, which are called using a single
+# global function pointer, and it uses structs to hold data for the player,
+# which is saved in a file.
+
+# Multi-user file permissions and user IDs allow multiple users to play and maintain
+# their own account data.
+
+# Here is an example (103 page).
