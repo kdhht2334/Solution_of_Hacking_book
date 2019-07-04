@@ -63,3 +63,4 @@ gcc -o rand_example rand_example.c
 # their own account data.
 
 # Here is an example (103 page).
+gcc -o game_of_chance game_of_chance.c
